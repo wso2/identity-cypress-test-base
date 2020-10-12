@@ -26,6 +26,9 @@ hs_err_pid*
 node_modules/
 jspm_packages/
 
+# Build directories
+dist
+
 # TypeScript v1 declaration files
 typings/
 
