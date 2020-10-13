@@ -20,6 +20,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2.3.3
+        with:
+          token: ${{secrets.IAM_GITHUB_BOT_TOKEN}}
+        if: github.repository == 'wso2/identity-cypress-test-base'
+
+      - name: Checkout
+        uses: actions/checkout@v2
+        if: github.repository != 'wso2/identity-cypress-test-base'
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2.1.2
@@ -31,6 +38,14 @@ jobs:
         run: |
           npm ci
           npm run build --if-present
+
+      - name: Bump version
+        run: |
+          git config --global user.email "version.bump@github.action.com"
+          git config --global user.name "GitHub Action Version Bumping"
+          npm version patch -m "[WSO2 Release] [GitHub Actions $(github.run_number)] [Release %s] prepare release %s"
+          git push --follow-tags
+        if: github.repository == 'wso2/identity-cypress-test-base'
 
       - name: Publish to NPM
         env:
