@@ -42,8 +42,8 @@ jobs:
       - name: Bump version
         run: |
           git config --global user.email "version.bump@github.action.com"
-          git config --global user.name "GitHub Action Version Bumping"
-          npm version patch -m "[WSO2 Release] [GitHub Actions $(github.run_number)] [Release %s] prepare release %s"
+          git config --global user.name "iam-github-bot"
+          npm version patch -m "[WSO2 Release] [GitHub Actions] [Release %s] prepare release %s"
           git push --follow-tags
         if: github.repository == 'wso2/identity-cypress-test-base'
 
