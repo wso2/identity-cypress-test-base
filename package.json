@@ -37,5 +37,13 @@
         "rimraf": "^3.0.2",
         "run-script-os": "^1.0.7",
         "typescript": "^4.0.2"
-    }
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wso2/identity-cypress-test-base.git"
+    },
+    "bugs": {
+        "url": "https://github.com/wso2/identity-cypress-test-base/issues"
+    },
+    "homepage": "https://github.com/wso2/identity-cypress-test-base#readme"
 }
