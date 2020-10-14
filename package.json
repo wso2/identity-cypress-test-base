@@ -1,6 +1,6 @@
 {
     "name": "@wso2/identity-cypress-test-base",
-    "version": "0.1.791",
+    "version": "0.1.792",
     "description": "Commonly used commands, configs, utilities for cypress integration & e2e tests in WSO2 Identity Server front-end applications.",
     "author": "WSO2",
     "license": "Apache-2.0",
