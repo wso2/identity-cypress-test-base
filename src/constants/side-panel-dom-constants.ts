@@ -29,6 +29,16 @@ export class SidePanelDomConstants {
      */
     private constructor() { }
 
-    public static readonly EMAIL_TEMPLATES_PARENT_ITEM_DATA_ATTR: string = "side-panel-items-email-templates";
+    // Develop Features
     public static readonly APPLICATIONS_PARENT_ITEM_DATA_ATTR: string = "side-panel-items-applications";
+    public static readonly IDP_PARENT_ITEM_DATA_ATTR: string = "side-panel-items-identity-providers";
+
+    // Manage Features
+    public static readonly USERS_PARENT_ITEM_DATA_ATTR: string = "side-panel-items-users";
+    public static readonly GROUPS_PARENT_ITEM_DATA_ATTR: string = "side-panel-items-groups";
+    public static readonly ROLES_PARENT_ITEM_DATA_ATTR: string = "side-panel-items-roles";
+    public static readonly USERSTORES_PARENT_ITEM_DATA_ATTR: string = "side-panel-items-user-stores";
+    public static readonly CERTIFICATES_PARENT_ITEM_DATA_ATTR: string = "side-panel-items-certificates";
+    public static readonly ATTRIBUTE_DIALECTS_PARENT_ITEM_DATA_ATTR: string = "side-panel-items-attribute-dialects";
+    public static readonly EMAIL_TEMPLATES_PARENT_ITEM_DATA_ATTR: string = "side-panel-items-email-templates";
 }
