@@ -17,4 +17,5 @@
  *
  */
 
-module.exports = require("./dist/constants");
+module.exports = require("./dist/ui");
+

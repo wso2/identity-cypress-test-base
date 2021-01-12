@@ -18,7 +18,6 @@
  */
 
 /// <reference types="cypress" />
-/// <reference path="../../types/index.d.ts" />
+/// <reference path="../../../types/api/commands.d.ts" />
 
-import "./authentication";
-import "./dom";
+import"./scim2.0-constants";

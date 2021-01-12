@@ -17,4 +17,7 @@
  *
  */
 
-module.exports = require("./dist/page-objects");
+/// <reference types="cypress" />
+/// <reference path="../../../types/api/commands.d.ts" />
+
+import "./scim2.0-user-managment";

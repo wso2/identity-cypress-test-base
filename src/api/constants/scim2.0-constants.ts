@@ -17,4 +17,18 @@
  *
  */
 
-module.exports = require("./dist/utils");
+/**
+ * Class containing SCIM2.0 constants.
+ */
+export class Scim2Constants {
+    /**
+     * Private constructor to avoid object instantiation from outside
+     * the class.
+     *
+     * @hideconstructor
+     */
+    private constructor() { }
+    
+    public static readonly SCIM2_ENDPOINT: string = "scim2/";
+    public static readonly SCIM2_USER_ENDPOINT: string= "Users/";
+}

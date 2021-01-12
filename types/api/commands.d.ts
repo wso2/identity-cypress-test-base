@@ -17,4 +17,16 @@
  *
  */
 
-module.exports = require("./dist/commands");
+/// <reference types="cypress" />
+
+declare namespace Cypress {
+    interface Chainable {
+
+        /**
+         * Custom command to create users from scim2.0 POST method
+         * @example cy.createUserWithScim("https://localhots:9443","admin","admin",reqBody,true)
+         */
+        createUserWithScim (host: String,authrzUserName: String,authrzPassword: String,reqBody: object,
+            failOnStatusCode?: boolean): Cypress.Chainable<any>;
+    }
+}
