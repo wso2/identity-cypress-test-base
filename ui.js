@@ -17,4 +17,4 @@
  *
  */
 
-module.exports = require("./dist/commands");
+module.exports = require("./dist/ui");

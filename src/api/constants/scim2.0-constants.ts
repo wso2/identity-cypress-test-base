@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2020, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ * Copyright (c) 2021, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
  *
  * WSO2 Inc. licenses this file to you under the Apache License,
  * Version 2.0 (the "License"); you may not use this file except
@@ -17,4 +17,18 @@
  *
  */
 
-module.exports = require("./dist/page-objects");
+/**
+ * Class containing SCIM2.0 constants.
+ */
+export class Scim2Constants {
+    /**
+     * Private constructor to avoid object instantiation from outside
+     * the class.
+     *
+     * @hideconstructor
+     */
+    private constructor() { }
+    
+    public static readonly SCIM2_ENDPOINT: string = "scim2/";
+    public static readonly SCIM2_USER_ENDPOINT: string= "Users/";
+}

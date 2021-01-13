@@ -18,7 +18,7 @@
  */
 
 /// <reference types="cypress" />
-/// <reference path="../../types/index.d.ts" />
+/// <reference path="../../../types/ui/commands.d.ts" />
 
 import "./authentication";
 import "./dom";
