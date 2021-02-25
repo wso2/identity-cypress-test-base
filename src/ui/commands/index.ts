@@ -22,3 +22,8 @@
 
 import "./authentication";
 import "./dom";
+import "./application-mgt/commands";
+import "./authentication/commands";
+import "./authorization/commands";
+import "./common/commands";
+import "./user-onboard/commands";

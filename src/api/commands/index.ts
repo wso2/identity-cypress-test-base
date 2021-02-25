@@ -21,3 +21,7 @@
 /// <reference path="../../../types/api/commands.d.ts" />
 
 import "./scim2.0-user-managment";
+import "./application-mgt/commands";
+import "./application-mgt/oauth2.0/commands";
+import "./common/commands";
+import "./user-mgt/scim2.0/commands";

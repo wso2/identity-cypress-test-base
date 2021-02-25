@@ -12,6 +12,7 @@
         "noImplicitAny": false,
         "noLib": false,
         "outDir": "dist",
+        "allowJs": true,
         "resolveJsonModule": true,
         "rootDir": "src",
         "sourceMap": true,
