@@ -19,7 +19,7 @@
 
 /// <reference types="cypress" />
 
-import { Header } from "./header";
+import { Header } from "./common";
 import { LoginPageDomConstants } from "../constants";
 
 /**
