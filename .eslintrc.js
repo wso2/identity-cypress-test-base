@@ -80,6 +80,7 @@ module.exports = {
             },
             rules: {
                 "eol-last": "error",
+                "@typescript-eslint/triple-slash-reference": 0,
                 "@typescript-eslint/no-explicit-any": 0,
                 "@typescript-eslint/explicit-function-return-type": 0,
                 "@typescript-eslint/no-inferrable-types": "off",
