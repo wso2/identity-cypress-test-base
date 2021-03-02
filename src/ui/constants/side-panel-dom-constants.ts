@@ -18,7 +18,7 @@
 
 /**
  * Class containing Side Panel DOM constants.
- * @deprecated since version 0.2.3. Use portal specific side panel dom constants instead.
+ * @deprecated since version 0.2.4. Use portal specific side panel dom constants instead.
  */
 export class SidePanelDomConstants {
 
