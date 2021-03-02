@@ -22,13 +22,7 @@
 
 import "./commands/authentication";
 import "./commands/dom";
-export * from "./constants/header-dom-constants";
-export * from "./constants/login-page-dom-constants";
-export * from "./constants/server-constants";
-export * from "./constants/side-panel-dom-constants";
-export * from "./page-objects/header";
-export * from "./page-objects/login-page";
-export * from "./utils/common-utils";
-export * from "./utils/cookie-utils";
-export * from "./utils/housekeeping-utils";
-export * from "./utils/storage-utils";
+
+export * from "./constants";
+export * from "./page-objects";
+export * from "./utils";
