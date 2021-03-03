@@ -45,7 +45,19 @@ Cypress.Commands.add("login", (username: string,
         });
 
     // Visit the portal. ex: `https://localhost:9443/carbon.super/console`
-    cy.visit(serverURL + tenantDomain + portal, {
+    let url: URL = new URL(serverURL);
+
+    if (tenantDomain) {
+        url = new URL(tenantDomain, url);
+    }
+
+    if (portal) {
+        url = new URL(portal, url);
+    }
+
+    cy.log("URL", url);
+
+    cy.visit(url.toString(), {
         onBeforeLoad: (win) => {
             win.sessionStorage.clear();
         }
