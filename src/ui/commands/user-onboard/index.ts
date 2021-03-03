@@ -17,9 +17,4 @@
  *
  */
 
-/// <reference types="cypress" />
-/// <reference path="../../../types/ui/commands.d.ts" />
-
-import "./authentication";
-import "./dom";
-import "./user-onboard";
+export * from "./commands";
