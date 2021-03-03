@@ -37,5 +37,10 @@ declare namespace Cypress {
          * Custom command to log users out from portals.
          */
         logout(waitTime?: number): Chainable<Element>;
+
+        /**
+         * Custom command to navigate to the user management section.
+         */
+        navigateToUserManagement(switchPortalTab?: boolean): Cypress.CanReturnChainable;
     }
 }
