@@ -74,10 +74,11 @@ Cypress.Commands.add("login", (username: string,
         .then(($body: JQuery<HTMLBodyElement>) => {
             // Check if a password field exists. If not, identify the form as part of an identifier first flow.
             if ($body.find(CommonUtils.resolveDataTestId(LoginPageDomConstants.PASSWORD_INPUT_DATA_ATTR)).length > 0) {
-
                 loginPage.getLoginPasswordInputField().type(password, { log: false });
                 loginPage.getLoginFormSubmitButton().click();
             } else {
+                cy.log("Identifier first flow detected...");
+
                 loginPage.getLoginFormContinueButton().click();
                 loginPage.getLoginPasswordInputField().type(password, { log: false });
                 loginPage.getLoginFormSubmitButton().click();
