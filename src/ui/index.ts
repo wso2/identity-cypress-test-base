@@ -20,8 +20,8 @@
 /// <reference types="cypress" />
 /// <reference path="../../types/ui/commands.d.ts" />
 
-import "./commands/authentication";
-import "./commands/dom";
+// Import the commands module.
+import "./commands";
 
 export * from "./constants";
 export * from "./page-objects";
