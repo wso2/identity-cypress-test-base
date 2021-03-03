@@ -82,9 +82,9 @@ Cypress.Commands.add("login", (username: string,
                 loginPage.getLoginPasswordInputField().type(password, { log: false });
                 loginPage.getLoginFormSubmitButton().click();
             }
-        });
 
-    cy.wait(waitTime);
+            cy.wait(waitTime);
+        });
 });
 
 /**
