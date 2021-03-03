@@ -18,7 +18,9 @@
 
 /// <reference types="cypress" />
 
+import { LoginPageDomConstants } from "../constants";
 import { LoginPage } from "../page-objects";
+import { CommonUtils } from "../utils";
 
 /**
  * Custom command to log users to portals.
@@ -66,8 +68,21 @@ Cypress.Commands.add("login", (username: string,
     const loginPage = new LoginPage();
 
     loginPage.getLoginUsernameInputField().type(username);
-    loginPage.getLoginPasswordInputField().type(password, { log: false });
-    loginPage.getLoginFormSubmitButton().click();
+
+    // Auto-detect login flow i.e Identifier first or Normal login flow.
+    cy.get("body")
+        .then(($body: JQuery<HTMLBodyElement>) => {
+            // Check if a password field exists. If not, identify the form as part of an identifier first flow.
+            if ($body.find(CommonUtils.resolveDataTestId(LoginPageDomConstants.PASSWORD_INPUT_DATA_ATTR)).length > 0) {
+
+                loginPage.getLoginPasswordInputField().type(password, { log: false });
+                loginPage.getLoginFormSubmitButton().click();
+            } else {
+                loginPage.getLoginFormContinueButton().click();
+                loginPage.getLoginPasswordInputField().type(password, { log: false });
+                loginPage.getLoginFormSubmitButton().click();
+            }
+        });
 
     cy.wait(waitTime);
 });
