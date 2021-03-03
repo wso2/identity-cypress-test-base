@@ -43,23 +43,31 @@ export class LoginPage {
      */
     public getLoginUsernameInputField(): Cypress.Chainable<JQuery<HTMLElement>> {
         return cy.get(LoginPageDomConstants.USERNAME_INPUT_DATA_ATTR);
-    };
+    }
 
     /**
      * Get the data attribute for login page password input field.
      * @return {Cypress.Chainable<JQuery<HTMLElement>>}
      */
-    public getLoginPasswordInputField(): Cypress.Chainable<JQuery<HTMLElement>> {
-        return cy.get(LoginPageDomConstants.PASSWORD_INPUT_DATA_ATTR);
-    };
+    public getLoginPasswordInputField(): Cypress.Chainable<Element> {
+        return cy.dataTestId(LoginPageDomConstants.PASSWORD_INPUT_DATA_ATTR);
+    }
 
     /**
      * Get the data attribute for login page form submit button.
      * @return {Cypress.Chainable<JQuery<HTMLElement>>}
      */
-    public getLoginFormSubmitButton(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public getLoginFormSubmitButton(): Cypress.Chainable<Element> {
+        return cy.dataTestId(LoginPageDomConstants.SUBMIT_BUTTON_DATA_ATTR);
+    }
+
+    /**
+     * Get the data attribute for login page Continue button.
+     * @return {Cypress.Chainable<JQuery<HTMLElement>>}
+     */
+    public getLoginFormContinueButton(): Cypress.Chainable<JQuery<HTMLElement>> {
         return cy.contains(LoginPageDomConstants.CONTINUE_BUTTON_DATA_ATTR);
-    };
+    }
 
     /**
      * Click on the Logout button on the header component.
@@ -67,5 +75,5 @@ export class LoginPage {
     public clickOnLogoutButton(): void {
         this.header.getUserAvatar().click();
         this.header.getLogoutButton().click();
-    };
+    }
 }

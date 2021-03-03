@@ -31,7 +31,10 @@ export class LoginPageDomConstants {
     // eslint-disable-next-line @typescript-eslint/no-empty-function
     private constructor() { }
 
+    // TODO: Use data test id's here.
+    // Tracker: https://github.com/wso2-enterprise/asgardeo-product/issues/999
     public static readonly USERNAME_INPUT_DATA_ATTR: string = "#usernameUserInput";
-    public static readonly PASSWORD_INPUT_DATA_ATTR: string = "#password";
+    public static readonly PASSWORD_INPUT_DATA_ATTR: string = "login-page-password-input";
     public static readonly CONTINUE_BUTTON_DATA_ATTR: string = "Continue";
+    public static readonly SUBMIT_BUTTON_DATA_ATTR: string = "login-page-continue-login-button";
 }
