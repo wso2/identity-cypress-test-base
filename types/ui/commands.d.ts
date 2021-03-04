@@ -41,6 +41,6 @@ declare namespace Cypress {
         /**
          * Custom command to navigate to the user management section.
          */
-        navigateToUserManagement(): Cypress.CanReturnChainable;
+        navigateToUserManagement(switchPortalTab?: boolean): Cypress.CanReturnChainable;
     }
 }
