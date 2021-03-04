@@ -17,9 +17,11 @@
  *
  */
 
-/// <reference types="cypress" />
-/// <reference path="../../../types/ui/commands.d.ts" />
-
-import "./authentication";
-import "./dom";
-import "./user-onboard";
+/**
+ * Class containing Header DOM constants.
+ */
+export class HeaderDomConstants {
+    
+    public static readonly AVATAR_ICON_DATA_ATTR: string = "app-header-user-avatar";
+    public static readonly LOGOUT_BUTTON_DATA_ATTR: string = "app-header-dropdown-link-Logout";
+}

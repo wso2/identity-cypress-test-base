@@ -17,5 +17,6 @@
  *
  */
 
-export * from "./header";
+export * from "./common";
+export * from "./console";
 export * from "./login-page";

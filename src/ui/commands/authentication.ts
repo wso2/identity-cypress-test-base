@@ -18,7 +18,9 @@
 
 /// <reference types="cypress" />
 
+import { LoginPageDomConstants } from "../constants";
 import { LoginPage } from "../page-objects";
+import { CommonUtils } from "../utils";
 
 /**
  * Custom command to log users to portals.
@@ -45,7 +47,19 @@ Cypress.Commands.add("login", (username: string,
         });
 
     // Visit the portal. ex: `https://localhost:9443/carbon.super/console`
-    cy.visit(serverURL + tenantDomain + portal, {
+    let url: URL = new URL(serverURL);
+
+    if (tenantDomain) {
+        url = new URL(tenantDomain, url);
+    }
+
+    if (portal) {
+        url = new URL(portal, url);
+    }
+
+    cy.log("URL", url);
+
+    cy.visit(url.toString(), {
         onBeforeLoad: (win) => {
             win.sessionStorage.clear();
         }
@@ -54,10 +68,24 @@ Cypress.Commands.add("login", (username: string,
     const loginPage = new LoginPage();
 
     loginPage.getLoginUsernameInputField().type(username);
-    loginPage.getLoginPasswordInputField().type(password, { log: false });
-    loginPage.getLoginFormSubmitButton().click();
 
-    cy.wait(waitTime);
+    // Auto-detect login flow i.e Identifier first or Normal login flow.
+    cy.get("body")
+        .then(($body: JQuery<HTMLBodyElement>) => {
+            // Check if a password field exists. If not, identify the form as part of an identifier first flow.
+            if ($body.find(CommonUtils.resolveDataTestId(LoginPageDomConstants.PASSWORD_INPUT_DATA_ATTR)).length > 0) {
+                loginPage.getLoginPasswordInputField().type(password, { log: false });
+                loginPage.getLoginFormSubmitButton().click();
+            } else {
+                cy.log("Identifier first flow detected...");
+
+                loginPage.getLoginFormContinueButton().click();
+                loginPage.getLoginPasswordInputField().type(password, { log: false });
+                loginPage.getLoginFormSubmitButton().click();
+            }
+
+            cy.wait(waitTime);
+        });
 });
 
 /**

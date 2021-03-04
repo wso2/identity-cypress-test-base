@@ -19,10 +19,10 @@
 
 /// <reference types="cypress" />
 
-import { HeaderDomConstants } from "../constants";
+import { ConsoleHeaderDomConstants, HeaderDomConstants } from "../../constants";
 
 /**
- * Class containing Header component objects.
+ * Class containing Common Header component objects.
  */
 export class Header {
 
@@ -44,15 +44,17 @@ export class Header {
 
     /**
      * Click on the developer portal switch.
+     * @deprecated since version 0.2.4. Use portal specific Header objects.
      */
     public clickOnDevelopPortalSwitch(): void {
-        cy.dataTestId(HeaderDomConstants.DEVELOP_SWITCH_DATA_ATTR).click();
+        cy.dataTestId(ConsoleHeaderDomConstants.DEVELOP_SWITCH_DATA_ATTR).click();
     }
 
     /**
      * Click on the manage portal switch.
+     * @deprecated since version 0.2.4. Use portal specific Header objects.
      */
     public clickOnManagePortalSwitch(): void {
-        cy.dataTestId(HeaderDomConstants.MANAGE_SWITCH_DATA_ATTR).click();
+        cy.dataTestId(ConsoleHeaderDomConstants.MANAGE_SWITCH_DATA_ATTR).click();
     }
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2020, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ * Copyright (c) 2021, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
  *
  * WSO2 Inc. licenses this file to you under the Apache License,
  * Version 2.0 (the "License"); you may not use this file except
@@ -17,10 +17,12 @@
  *
  */
 
+import { HeaderDomConstants } from "../common";
+
 /**
- * Class containing Login Page DOM constants.
+ * Class containing Console Header DOM constants.
  */
-export class LoginPageDomConstants {
+export class ConsoleHeaderDomConstants extends HeaderDomConstants {
 
     /**
      * Private constructor to avoid object instantiation from outside
@@ -28,13 +30,10 @@ export class LoginPageDomConstants {
      *
      * @hideconstructor
      */
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    private constructor() { }
+    private constructor() {
+        super();
+    }
 
-    // TODO: Use data test id's here.
-    // Tracker: https://github.com/wso2-enterprise/asgardeo-product/issues/999
-    public static readonly USERNAME_INPUT_DATA_ATTR: string = "#usernameUserInput";
-    public static readonly PASSWORD_INPUT_DATA_ATTR: string = "login-page-password-input";
-    public static readonly CONTINUE_BUTTON_DATA_ATTR: string = "Continue";
-    public static readonly SUBMIT_BUTTON_DATA_ATTR: string = "login-page-continue-login-button";
+    public static readonly MANAGE_SWITCH_DATA_ATTR: string = "app-header-admin-portal-switch";
+    public static readonly DEVELOP_SWITCH_DATA_ATTR: string = "app-header-developer-portal-switch";
 }
