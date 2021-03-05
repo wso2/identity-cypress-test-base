@@ -29,15 +29,17 @@ export class ConsoleHeader extends Header {
 
     /**
      * Click on the developer portal switch.
+     * @param {Partial<ClickOptions>} options - Click options.
      */
-    public clickOnDevelopPortalSwitch(): void {
+    public clickOnDevelopPortalSwitch(options?: Partial<Cypress.ClickOptions>): void {
         cy.dataTestId(ConsoleHeaderDomConstants.DEVELOP_SWITCH_DATA_ATTR).click();
     }
 
     /**
      * Click on the manage portal switch.
+     * @param {Partial<ClickOptions>} options - Click options.
      */
-    public clickOnManagePortalSwitch(): void {
+    public clickOnManagePortalSwitch(options?: Partial<Cypress.ClickOptions>): void {
         cy.dataTestId(ConsoleHeaderDomConstants.MANAGE_SWITCH_DATA_ATTR).click();
     }
 }

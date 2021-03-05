@@ -28,97 +28,97 @@ export class ConsoleSidePanel {
 
     /**
      * Click on Applications feature from side panel.
-     * @return {Cypress.Chainable<Element>}
+     * @param {Partial<ClickOptions>} options - Click options.
      */
-    public navigateToApplications(): Cypress.Chainable<Element> {
-        return cy.dataTestId(ConsoleSidePanelDomConstants.APPLICATIONS_MENU_ITEM_DATA_ATTR).click();
+    public navigateToApplications(options?: Partial<Cypress.ClickOptions>): void {
+        cy.dataTestId(ConsoleSidePanelDomConstants.APPLICATIONS_MENU_ITEM_DATA_ATTR).click();
     }
 
     /**
      * Click on IDP feature from side panel.
-     * @return {Cypress.Chainable<Element>}
+     * @param {Partial<ClickOptions>} options - Click options.
      */
-    public navigateToIdentityProviders(): Cypress.Chainable<Element> {
-        return cy.dataTestId(ConsoleSidePanelDomConstants.IDP_MENU_ITEM_DATA_ATTR).click();
+    public navigateToIdentityProviders(options?: Partial<Cypress.ClickOptions>): void {
+        cy.dataTestId(ConsoleSidePanelDomConstants.IDP_MENU_ITEM_DATA_ATTR).click();
     }
 
     /**
      * Click on Users feature from side panel.
-     * @return {Cypress.Chainable<Element>}
+     * @param {Partial<ClickOptions>} options - Click options.
      */
-    public navigateToUsers(): Cypress.Chainable<Element> {
-        return cy.dataTestId(ConsoleSidePanelDomConstants.USERS_MENU_ITEM_DATA_ATTR).click();
+    public navigateToUsers(options?: Partial<Cypress.ClickOptions>): void {
+        cy.dataTestId(ConsoleSidePanelDomConstants.USERS_MENU_ITEM_DATA_ATTR).click();
     }
 
     /**
      * Click on Groups feature from side panel.
-     * @return {Cypress.Chainable<Element>}
+     * @param {Partial<ClickOptions>} options - Click options.
      */
-    public navigateToGroups(): Cypress.Chainable<Element> {
-        return cy.dataTestId(ConsoleSidePanelDomConstants.GROUPS_MENU_ITEM_DATA_ATTR).click();
+    public navigateToGroups(options?: Partial<Cypress.ClickOptions>): void {
+        cy.dataTestId(ConsoleSidePanelDomConstants.GROUPS_MENU_ITEM_DATA_ATTR).click();
     }
 
     /**
      * Click on Roles feature from side panel.
-     * @return {Cypress.Chainable<Element>}
+     * @param {Partial<ClickOptions>} options - Click options.
      */
-    public navigateToRoles(): Cypress.Chainable<Element> {
-        return cy.dataTestId(ConsoleSidePanelDomConstants.ROLES_MENU_ITEM_DATA_ATTR).click();
+    public navigateToRoles(options?: Partial<Cypress.ClickOptions>): void {
+        cy.dataTestId(ConsoleSidePanelDomConstants.ROLES_MENU_ITEM_DATA_ATTR).click();
     }
 
     /**
      * Click on Userstores feature from side panel.
-     * @return {Cypress.Chainable<Element>}
+     * @param {Partial<ClickOptions>} options - Click options.
      */
-    public navigateToUserstores(): Cypress.Chainable<Element> {
-        return cy.dataTestId(ConsoleSidePanelDomConstants.USERSTORES_MENU_ITEM_DATA_ATTR).click();
+    public navigateToUserstores(options?: Partial<Cypress.ClickOptions>): void {
+        cy.dataTestId(ConsoleSidePanelDomConstants.USERSTORES_MENU_ITEM_DATA_ATTR).click();
     }
 
     /**
      * Click on Certificates feature from side panel.
-     * @return {Cypress.Chainable<Element>}
+     * @param {Partial<ClickOptions>} options - Click options.
      */
-    public navigateToCertificates(): Cypress.Chainable<Element> {
-        return cy.dataTestId(ConsoleSidePanelDomConstants.CERTIFICATES_MENU_ITEM_DATA_ATTR).click();
+    public navigateToCertificates(options?: Partial<Cypress.ClickOptions>): void {
+        cy.dataTestId(ConsoleSidePanelDomConstants.CERTIFICATES_MENU_ITEM_DATA_ATTR).click();
     }
 
     /**
      * Click on Attributes feature from side panel.
-     * @return {Cypress.Chainable<Element>}
+     * @param {Partial<ClickOptions>} options - Click options.
      */
-    public navigateToAttributes(): Cypress.Chainable<Element> {
-        return cy.dataTestId(ConsoleSidePanelDomConstants.ATTRIBUTES_MENU_ITEM_DATA_ATTR).click();
+    public navigateToAttributes(options?: Partial<Cypress.ClickOptions>): void {
+        cy.dataTestId(ConsoleSidePanelDomConstants.ATTRIBUTES_MENU_ITEM_DATA_ATTR).click();
     }
 
     /**
      * Click on Dialects feature from side panel.
-     * @return {Cypress.Chainable<Element>}
+     * @param {Partial<ClickOptions>} options - Click options.
      */
-    public navigateToDialects(): Cypress.Chainable<Element> {
-        return cy.dataTestId(ConsoleSidePanelDomConstants.DIALECTS_MENU_ITEM_DATA_ATTR).click();
+    public navigateToDialects(options?: Partial<Cypress.ClickOptions>): void {
+        cy.dataTestId(ConsoleSidePanelDomConstants.DIALECTS_MENU_ITEM_DATA_ATTR).click();
     }
 
     /**
      * Click on OIDC Scopes feature from side panel.
-     * @return {Cypress.Chainable<Element>}
+     * @param {Partial<ClickOptions>} options - Click options.
      */
-    public navigateToOIDCScopes(): Cypress.Chainable<Element> {
-        return cy.dataTestId(ConsoleSidePanelDomConstants.OIDC_SCOPES_MENU_ITEM_DATA_ATTR).click();
+    public navigateToOIDCScopes(options?: Partial<Cypress.ClickOptions>): void {
+        cy.dataTestId(ConsoleSidePanelDomConstants.OIDC_SCOPES_MENU_ITEM_DATA_ATTR).click();
     }
 
     /**
      * Click on Email Templates feature from side panel.
-     * @return {Cypress.Chainable<Element>}
+     * @param {Partial<ClickOptions>} options - Click options.
      */
-    public navigateToEmailTemplates(): Cypress.Chainable<Element> {
-        return cy.dataTestId(ConsoleSidePanelDomConstants.EMAIL_TEMPLATES_MENU_ITEM_DATA_ATTR).click();
+    public navigateToEmailTemplates(options?: Partial<Cypress.ClickOptions>): void {
+        cy.dataTestId(ConsoleSidePanelDomConstants.EMAIL_TEMPLATES_MENU_ITEM_DATA_ATTR).click();
     }
 
     /**
      * Click on Remote Fetch feature from side panel.
-     * @return {Cypress.Chainable<Element>}
+     * @param {Partial<ClickOptions>} options - Click options.
      */
-    public navigateToRemoteFetch(): Cypress.Chainable<Element> {
-        return cy.dataTestId(ConsoleSidePanelDomConstants.REMOTE_FETCH_MENU_ITEM_DATA_ATTR).click();
+    public navigateToRemoteFetch(options?: Partial<Cypress.ClickOptions>): void {
+        cy.dataTestId(ConsoleSidePanelDomConstants.REMOTE_FETCH_MENU_ITEM_DATA_ATTR).click();
     }
 }
