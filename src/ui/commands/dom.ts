@@ -24,9 +24,15 @@ import { CommonUtils } from "../utils";
 /**
  * Custom command to select DOM element by data-testid attribute.
  *
+ * @example
+ *    cy.dataTestId("<RAW_TEST_ID>") -> [data-testid=<RAW_TEST_ID>]
+ *
  * @param {string} value - Attribute value.
+ * @param {string} options - Attribute value.
  * @returns {Cypress.CanReturnChainable}
  */
-Cypress.Commands.add("dataTestId", (value: string): Cypress.CanReturnChainable => {
-    return cy.get(CommonUtils.resolveDataTestId(value));
+Cypress.Commands.add("dataTestId", (value: string, options?: Partial<Cypress.Loggable & Cypress.Timeoutable
+    & Cypress.Withinable & Cypress.Shadow>): Cypress.CanReturnChainable => {
+
+    return cy.get(CommonUtils.resolveDataTestId(value), options);
 });
