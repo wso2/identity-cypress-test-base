@@ -18,4 +18,6 @@
  */
 
 export * from "./console-header";
+export * from "./create-wizard";
+export * from "./list-page";
 export * from "./side-panel";

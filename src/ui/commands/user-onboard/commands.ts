@@ -31,10 +31,10 @@ Cypress.Commands.add("navigateToUserManagement", (switchPortalTab: boolean = tru
 
     if (switchPortalTab) {
         const header: ConsoleHeader = new ConsoleHeader();
-        header.clickOnManagePortalSwitch();
+        header.clickOnManagePortalSwitch({ force: true });
     }
 
     const sidePanel: ConsoleSidePanel = new ConsoleSidePanel();
 
-    sidePanel.navigateToUsers();
+    sidePanel.navigateToUsers({ force: true });
 });
