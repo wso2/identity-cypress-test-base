@@ -42,4 +42,83 @@ export class CommonUtils {
     public static resolveDataTestId(value: string): string {
         return `[data-testid=${ value }]`;
     }
+
+    /**
+     * Perform a click action on the given element.
+     *
+     * @example
+     * CommonUtils.clickButton("sample-id")
+     *
+     * @example
+     * const options: Partial<Cypress.ClickOptions> = { force:true }
+     * CommonUtils.clickButton("sample-id", options)
+     *
+     * @param {string} dataTestId - Attribute data test id.
+     * @param {Partial<Cypress.ClickOptions>} [options] - Options to be passed to the action.
+     *
+     * @see https://on.cypress.io/click click options.
+     */
+    public static clickElement(dataTestId: string, options?: Partial<Cypress.ClickOptions>): void {
+
+        if (options) {
+            cy.get(CommonUtils.resolveDataTestId(dataTestId)).click(options);
+        } else {
+            cy.get(CommonUtils.resolveDataTestId(dataTestId)).click();
+        }
+    }
+
+    /**
+     * Perform a forced click action on the given element.
+     *
+     * @example
+     * CommonUtils.forceClickButton("sample-id")
+     *
+     * @param {string} dataTestId - Attribute data test id.
+     */
+    public static forceClickElement(dataTestId: string): void {
+
+        const options: Partial<Cypress.ClickOptions> = { force: true };
+        CommonUtils.clickElement(dataTestId, options);
+    }
+
+    /**
+     * Perform a text input action on the given element.
+     *
+     * @example
+     * CommonUtils.inputText("sample-id", "some text")
+     *
+     * @example
+     * CommonUtils.inputText("sample-id", "{selectall}{backspace}some text")
+     *
+     * @example
+     * const options: Partial<Cypress.TypeOptions> = { delay:2 }
+     * CommonUtils.inputText("sample-id", "some text", options)
+     *
+     * @param {string} dataTestId - Attribute data test id.
+     * @param {string} input - Text to input.
+     * @param {Partial<Cypress.TypeOptions>} [options] - Options to be passed to the action.
+     *
+     * @see https://on.cypress.io/type type options.
+     */
+    public static inputText(dataTestId: string, input: string, options?: Partial<Cypress.TypeOptions>): void {
+
+        if (options) {
+            cy.get(CommonUtils.resolveDataTestId(dataTestId)).type(input, options);
+        } else {
+            cy.get(CommonUtils.resolveDataTestId(dataTestId)).type(input);
+        }
+    }
+
+    /**
+     * Perform a submit action on the given element.
+     *
+     * @example
+     * CommonUtils.formSubmit("sample-id")
+     *
+     * @param {string} dataTestId - Attribute data test id.
+     */
+    public static formSubmit(dataTestId: string): void {
+
+        cy.get(CommonUtils.resolveDataTestId(dataTestId)).submit();
+    }
 }
