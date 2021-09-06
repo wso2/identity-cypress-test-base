@@ -29,6 +29,13 @@ declare namespace Cypress {
             & Cypress.Withinable & Cypress.Shadow>): Chainable<Element>;
 
         /**
+         * Custom command to select DOM element by `data-componentid` attribute.
+         * @example cy.dataTestId("admin-portal-switch")
+         */
+        dataComponentId(value: string, options?: Partial<Cypress.Loggable & Cypress.Timeoutable
+            & Cypress.Withinable & Cypress.Shadow>): Chainable<Element>;
+
+        /**
          * Custom command to log users to portals.
          */
         login(username: string, password: string, serverURL: string, portal: string,

@@ -44,6 +44,18 @@ export class CommonUtils {
     }
 
     /**
+     * Resolves the data component id when a raw attribute value is passed in.
+     *
+     * @example CommonUtils.resolveDataComponentId("sample-id") -> [data-componentid="sample-id"]
+     *
+     * @param {string} value - Attribute value.
+     * @returns {string}
+     */
+    public static resolveDataComponentId(value: string): string {
+        return `[data-componentid=${ value }]`;
+    }
+
+    /**
      * Perform a click action on the given element.
      *
      * @example

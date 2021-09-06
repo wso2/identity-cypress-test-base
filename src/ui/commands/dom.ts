@@ -36,3 +36,19 @@ Cypress.Commands.add("dataTestId", (value: string, options?: Partial<Cypress.Log
 
     return cy.get(CommonUtils.resolveDataTestId(value), options);
 });
+
+/**
+ * Custom command to select DOM element by `data-componentid` attribute.
+ *
+ * @example
+ *    cy.dataComponentId("<RAW_TEST_ID>") -> [data-componentid=<RAW_TEST_ID>]
+ *
+ * @param {string} value - Attribute value.
+ * @param {string} options - Attribute value.
+ * @returns {Cypress.CanReturnChainable}
+ */
+Cypress.Commands.add("dataComponentId", (value: string, options?: Partial<Cypress.Loggable & Cypress.Timeoutable
+    & Cypress.Withinable & Cypress.Shadow>): Cypress.CanReturnChainable => {
+
+    return cy.get(CommonUtils.resolveDataTestId(value), options);
+});
