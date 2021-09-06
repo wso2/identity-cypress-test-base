@@ -22,7 +22,9 @@ import { CommonUtils } from "../utils";
 /// <reference types="cypress" />
 
 /**
- * Custom command to select DOM element by data-testid attribute.
+ * Custom command to select DOM element by `data-testid` attribute.
+ *
+ * @deprecated Deprecated since version 0.2.5. Use `cy.dataComponentId()` instead.
  *
  * @example
  *    cy.dataTestId("<RAW_TEST_ID>") -> [data-testid=<RAW_TEST_ID>]

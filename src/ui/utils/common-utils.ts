@@ -34,6 +34,9 @@ export class CommonUtils {
 
     /**
      * Resolves the data test id when a raw attribute value is passed in.
+     *
+     * @deprecated Deprecated since version 0.2.5. Use `dataComponentId` instead.
+     *
      * @example CommonUtils.resolveDataTestId("sample-id") -> [data-testid="sample-id"]
      *
      * @param {string} value - Attribute value.
