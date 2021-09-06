@@ -24,16 +24,6 @@ import { HeaderDomConstants } from "../common";
  */
 export class ConsoleHeaderDomConstants extends HeaderDomConstants {
 
-    /**
-     * Private constructor to avoid object instantiation from outside
-     * the class.
-     *
-     * @hideconstructor
-     */
-    private constructor() {
-        super();
-    }
-
     public static readonly MANAGE_SWITCH_DATA_ATTR: string = "app-header-admin-portal-switch";
     public static readonly DEVELOP_SWITCH_DATA_ATTR: string = "app-header-developer-portal-switch";
 }

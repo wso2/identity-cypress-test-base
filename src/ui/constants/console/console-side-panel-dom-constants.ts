@@ -21,14 +21,6 @@
  */
 export class ConsoleSidePanelDomConstants {
 
-    /**
-     * Private constructor to avoid object instantiation from outside
-     * the class.
-     *
-     * @hideconstructor
-     */
-    private constructor() { }
-
     // Develop Features
     public static readonly APPLICATIONS_MENU_ITEM_DATA_ATTR: string = "side-panel-items-applications";
     public static readonly IDP_MENU_ITEM_DATA_ATTR: string = "side-panel-items-identity-providers";
@@ -39,7 +31,7 @@ export class ConsoleSidePanelDomConstants {
     public static readonly ROLES_MENU_ITEM_DATA_ATTR: string = "side-panel-items-roles";
     public static readonly USERSTORES_MENU_ITEM_DATA_ATTR: string = "side-panel-items-user-stores";
     public static readonly CERTIFICATES_MENU_ITEM_DATA_ATTR: string = "side-panel-items-certificates";
-    public static readonly ATTRIBUTES_MENU_ITEM_DATA_ATTR: string = "side-panel-items-local-attributes";
+    public static readonly ATTRIBUTES_MENU_ITEM_DATA_ATTR: string = "side-panel-items-attribute-dialects";
     public static readonly DIALECTS_MENU_ITEM_DATA_ATTR: string = "side-panel-items-local-dialects";
     public static readonly OIDC_SCOPES_MENU_ITEM_DATA_ATTR: string = "side-panel-items-oidc-scopes";
     public static readonly EMAIL_TEMPLATES_MENU_ITEM_DATA_ATTR: string = "side-panel-items-email-templates";

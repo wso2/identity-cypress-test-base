@@ -22,15 +22,5 @@
  */
 export class ServerConstants {
 
-    /**
-     * Private constructor to avoid object instantiation from outside
-     * the class.
-     *
-     * @hideconstructor
-     */
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    private constructor() {
-    }
-
     public static readonly SESSION_COOKIES: string[] = [ "atbv", "commonAuthId", "JSESSIONID", "opbs" ];
 }

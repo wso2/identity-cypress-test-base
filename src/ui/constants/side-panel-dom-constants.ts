@@ -22,14 +22,6 @@
  */
 export class SidePanelDomConstants {
 
-    /**
-     * Private constructor to avoid object instantiation from outside
-     * the class.
-     *
-     * @hideconstructor
-     */
-    private constructor() { }
-
     // Develop Features
     public static readonly APPLICATIONS_PARENT_ITEM_DATA_ATTR: string = "side-panel-items-applications";
     public static readonly IDP_PARENT_ITEM_DATA_ATTR: string = "side-panel-items-identity-providers";
