@@ -30,7 +30,7 @@ import { CommonUtils } from "../utils";
  *    cy.dataTestId("<RAW_TEST_ID>") -> [data-testid=<RAW_TEST_ID>]
  *
  * @param {string} value - Attribute value.
- * @param {string} options - Attribute value.
+ * @param {string} options - Query options. i.e timeout etc.
  * @returns {Cypress.CanReturnChainable}
  */
 Cypress.Commands.add("dataTestId", (value: string, options?: Partial<Cypress.Loggable & Cypress.Timeoutable
@@ -46,7 +46,7 @@ Cypress.Commands.add("dataTestId", (value: string, options?: Partial<Cypress.Log
  *    cy.dataComponentId("<RAW_TEST_ID>") -> [data-componentid=<RAW_TEST_ID>]
  *
  * @param {string} value - Attribute value.
- * @param {string} options - Attribute value.
+ * @param {string} options - Query options. i.e timeout etc.
  * @returns {Cypress.CanReturnChainable}
  */
 Cypress.Commands.add("dataComponentId", (value: string, options?: Partial<Cypress.Loggable & Cypress.Timeoutable
