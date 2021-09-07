@@ -60,16 +60,9 @@ jobs:
           npm ci
           npm run build --if-present
 
-      - name: Bump version
-        run: |
-          git config --global user.email "version.bump@github.action.com"
-          git config --global user.name "iam-github-bot"
-          npm version patch -m "[WSO2 Release] [GitHub Actions] [Release %s] prepare release %s"
-          git push --follow-tags
-        if: github.repository == 'wso2/identity-cypress-test-base'
-
       - name: Publish to NPM
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
         run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
           npm publish --access public
