@@ -33,7 +33,7 @@
 /* Only add the background image in higher resolution displays. */
 @media only screen and (min-width: 480px) {
     .login-portal.layout .page-wrapper {
-        background-image: url(https://cdn.statically.io/gh/brionmario/asgardeo-branding/main/images/bg-overlay.png);
+        background-image: url(https://cdn.statically.io/gh/wso2/identity-cypress-test-base/main/branding/images/bg-overlay.png);
         background-repeat: no-repeat;
         background-size: 600px;
         background-position-y: bottom;
