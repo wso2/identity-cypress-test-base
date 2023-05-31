@@ -61,7 +61,7 @@
 ------------------------------*/
 
 /* Buttons */
-.ui.primary.button {
+.ui.primary.button:not(.basic.link-button) {
     background: var(--primaryColor) !important;
     color: #ffffff !important;
 }
