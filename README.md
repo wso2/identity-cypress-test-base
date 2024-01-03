@@ -1,6 +1,6 @@
 # WSO2 Identity Server - Cypress Test Base
 
-Commonly used commands, configs, utilities for cypress integration & end-to-end tests in WSO2 Identity Server front-end applications.
+Commonly used commands, configs, and utilities for cypress integration & end-to-end tests in WSO2 Identity Server front-end applications.
 
 ![npm](https://img.shields.io/npm/v/@wso2/identity-cypress-test-base)
 [![PR Builder](https://github.com/wso2/identity-cypress-test-base/actions/workflows/pr-builder.yml/badge.svg)](https://github.com/wso2/identity-cypress-test-base/actions/workflows/pr-builder.yml)
