@@ -35,7 +35,7 @@ export class Header {
     }
 
     /**
-     * Get the data attribute for logout button.
+     * Get the data attribute for the logout button.
      * @return {Cypress.Chainable<Element>}
      */
     public getLogoutButton(): Cypress.Chainable<Element> {
