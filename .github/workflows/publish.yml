@@ -42,7 +42,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2.3.3
         with:
-          token: ${{secrets.IAM_GITHUB_BOT_TOKEN}}
+          token: ${{secrets.WSO2_IAM_BOT_TOKEN}}
         if: github.repository == 'wso2/identity-cypress-test-base'
 
       - name: Checkout
