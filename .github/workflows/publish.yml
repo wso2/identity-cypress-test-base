@@ -42,7 +42,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2.3.3
         with:
-          token: ${{secrets.WSO2_IAM_BOT_TOKEN}}
+          token: ${{secrets.IAM_GITHUB_BOT_TOKEN}}
         if: github.repository == 'wso2/identity-cypress-test-base'
 
       - name: Checkout
@@ -62,8 +62,8 @@ jobs:
 
       - name: Bump version
         run: |
-          git config --global user.email "version.bump@github.action.com"
-          git config --global user.name "wso2-iam-bot"
+          git config --global user.email "iam-github-bot"
+          git config --global user.name "iam-github-bot@wso2.com"
           npm version patch -m "[WSO2 Release] [GitHub Actions] [Release %s] prepare release %s"
           git push --follow-tags
         if: github.repository == 'wso2/identity-cypress-test-base'
