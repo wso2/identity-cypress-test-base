@@ -62,8 +62,8 @@ jobs:
 
       - name: Bump version
         run: |
-          git config --global user.email "iam-github-bot"
-          git config --global user.name "iam-github-bot@wso2.com"
+          git config --global user.email "iam-github-bot@wso2.com"
+          git config --global user.name "iam-github-bot"
           npm version patch -m "[WSO2 Release] [GitHub Actions] [Release %s] prepare release %s"
           git push --follow-tags
         if: github.repository == 'wso2/identity-cypress-test-base'
