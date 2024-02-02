@@ -20,4 +20,5 @@
 /// <reference types="cypress" />
 /// <reference path="../../../types/api/commands.d.ts" />
 
-import "./scim2.0-user-managment";
+import "./user-managment";
+import "./auth";

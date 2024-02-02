@@ -20,4 +20,5 @@
 /// <reference types="cypress" />
 /// <reference path="../../../types/api/commands.d.ts" />
 
-import"./scim2.0-constants";
+import"./user-management-constants";
+import "./api-constants";
