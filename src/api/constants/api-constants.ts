@@ -12,6 +12,7 @@
  * Class containing API request method constants.
  */
 export class RequestMethodTypes {
+
     /**
      * Private constructor to avoid object instantiation from outside
      * the class.
@@ -27,6 +28,7 @@ export class RequestMethodTypes {
  * Class containing API request content constants.
  */
 export class RequestContentTypes {
+    
     /**
      * Private constructor to avoid object instantiation from outside
      * the class.

@@ -35,6 +35,7 @@ Cypress.Commands.add("createUserViaAPI", (host, username, password, reqBody, gra
 
     cy.getAuthentication(host, username,
         password, grantType, authType).then(response => {
+            
             const token = response.body.access_token;
 
             return cy.request({

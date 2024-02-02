@@ -1,5 +1,5 @@
 /*
- *   Copyright (c) 2024 WSO2 Inc. (http://www.wso2.org)
+ *   Copyright (c) 2024 WSO2 LLC. (http://www.wso2.org)
  *   All rights reserved.
  *   
  *   This software is the property of WSO2 Inc. and its suppliers, if any.
@@ -26,13 +26,16 @@
  */
 Cypress.Commands.add("getAuthentication", (serverHost: string, username: string, password: string,
     grantType: string, authType: "Basic" | "Bearer"): Cypress.CanReturnChainable => {
+        
     const encodedCredentials = btoa(username + ":" + password);
 
+   // Retrive token from Basic auth type
     if (authType === "Basic") {
         return cy.wrap(encodedCredentials);
     }
 
-    if (authType === "Bearer") {
+    // Retrive token from Bearer auth type
+    else {
         return cy.request({
             body: {
                 "grant_type": grantType,

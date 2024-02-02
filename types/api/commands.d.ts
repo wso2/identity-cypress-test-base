@@ -30,7 +30,7 @@ declare namespace Cypress {
 
         /** 
         * This command use to get the Authentication method with the prefered token and grant type
-        * @example cy.scimCreateUser("https://<hostname>/domain/", "admin", "admin123",reqBody, true)
+        * @example cy.scimCreateUser("https://<hostname>/domain/", "admin", "admin123", reqBody, true)
         * @param  {string} serverHost - Host name
         * @param  {string} username - API authetication username/client-ID
         * @param  {string} password - API authetication credentials password/client-secret
