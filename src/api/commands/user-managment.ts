@@ -31,11 +31,11 @@ import { UserManagmentConstants } from "../constants/user-management-constants";
  * @param  {boolean} failOnStatusCode- Whether to fail on response codes other than 2xx and 3xx
  * */
 Cypress.Commands.add("createUserViaAPI", (host, username, password, reqBody, grantType, authType,
-    failOnStatusCode = true): Cypress.Chainable<any> => {
+    failOnStatusCode = true) => {
 
     cy.getAuthentication(host, username,
         password, grantType, authType).then(response => {
-            
+
             const token = response.body.access_token;
 
             return cy.request({
