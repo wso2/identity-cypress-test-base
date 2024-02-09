@@ -25,8 +25,8 @@ declare namespace Cypress {
         /**
          * Custom command to create users from scim2.0 POST method
          */
-        createUserViaAPI(host: String, username: string, password: string, reqBody: object, authType: "Basic" | "Bearer",
-            failOnStatusCode?: boolean): Cypress.Chainable<any>;
+        createUserViaAPI(host: string, username: string, password: string, reqBody: Cypress.ObjectLike, 
+            grantType: string, authType: "Basic" | "Bearer", failOnStatusCode?: boolean): Cypress.Chainable<any>;
 
         /** 
         * This command use to get the Authentication method with the prefered token and grant type
@@ -37,7 +37,7 @@ declare namespace Cypress {
         * @param  {jsonbody} grantType - Prefeered grant type
         * @param  {boolean} authType - Prefeered authentication type
         * */
-        getAuthentication(host: String, username: string, password: string, grantType: string,
+        getAuthentication(host: string, username: string, password: string, grantType: string,
              authType: "Basic" | "Bearer"): Cypress.Chainable<any>;
     }
 }
