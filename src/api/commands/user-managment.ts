@@ -30,13 +30,13 @@ import { UserManagmentConstants } from "../constants/user-management-constants";
  * @param  {jsonbody} reqBody - request body with user profile informations
  * @param  {boolean} failOnStatusCode- Whether to fail on response codes other than 2xx and 3xx
  * */
-Cypress.Commands.add("createUserViaAPI", (host, username, password, reqBody, grantType, authType,
-    failOnStatusCode = true) => {
+Cypress.Commands.add("createUserViaAPI", (host: string, username: string, password: string, reqBody: Cypress.ObjectLike,
+     grantType: string, authType: "Basic" | "Bearer", failOnStatusCode = true) => {
 
     cy.getAuthentication(host, username,
         password, grantType, authType).then(response => {
 
-            const token = response.body.access_token;
+            const token: string = response.body.access_token;
 
             return cy.request({
                 "method": RequestMethodTypes.POST,

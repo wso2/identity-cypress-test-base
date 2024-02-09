@@ -34,7 +34,7 @@ Cypress.Commands.add("getAuthentication", (serverHost: string, username: string,
         return cy.wrap(encodedCredentials);
     }
 
-    // Retrive token from Bearer auth type
+    // Retrieve a bearer token from Bearer auth type `oauth2/token` endpoint.
     else {
         return cy.request({
             body: {
