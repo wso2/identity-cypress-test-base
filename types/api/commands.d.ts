@@ -24,9 +24,20 @@ declare namespace Cypress {
 
         /**
          * Custom command to create users from scim2.0 POST method
-         * @example cy.createUserWithScim("https://localhots:9443","admin","admin",reqBody,true)
          */
-        createUserWithScim (host: String,authrzUserName: String,authrzPassword: String,reqBody: object,
+        createUserViaAPI(host: String, username: string, password: string, reqBody: object, authType: "Basic" | "Bearer",
             failOnStatusCode?: boolean): Cypress.Chainable<any>;
+
+        /** 
+        * This command use to get the Authentication method with the prefered token and grant type
+        * @example cy.scimCreateUser("https://<hostname>/domain/", "admin", "admin123", reqBody, true)
+        * @param  {string} serverHost - Host name
+        * @param  {string} username - API authetication username/client-ID
+        * @param  {string} password - API authetication credentials password/client-secret
+        * @param  {jsonbody} grantType - Prefeered grant type
+        * @param  {boolean} authType - Prefeered authentication type
+        * */
+        getAuthentication(host: String, username: string, password: string, grantType: string,
+             authType: "Basic" | "Bearer"): Cypress.Chainable<any>;
     }
 }

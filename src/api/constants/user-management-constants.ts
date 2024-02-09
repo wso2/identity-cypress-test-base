@@ -20,7 +20,7 @@
 /**
  * Class containing SCIM2.0 constants.
  */
-export class Scim2Constants {
+export class UserManagmentConstants {
     /**
      * Private constructor to avoid object instantiation from outside
      * the class.

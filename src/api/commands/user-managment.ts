@@ -18,7 +18,8 @@
 
 /// <reference types="cypress" />
 
-import { Scim2Constants } from "../constants/scim2.0-constants";
+import { RequestContentTypes, RequestMethodTypes }  from "../constants/api-constants";
+import { UserManagmentConstants } from "../constants/user-management-constants";
 
 /**
  * This command use to create users from scim2.0 POST method
@@ -29,20 +30,25 @@ import { Scim2Constants } from "../constants/scim2.0-constants";
  * @param  {jsonbody} reqBody - request body with user profile informations
  * @param  {boolean} failOnStatusCode- Whether to fail on response codes other than 2xx and 3xx
  * */
-Cypress.Commands.add("createUserWithScim", ( host,authrzUserName,authrzPassword,reqBody,
-    failOnStatusCode = true): Cypress.Chainable<any> => {
+Cypress.Commands.add("createUserViaAPI", (host: string, username: string, password: string, reqBody: Cypress.ObjectLike,
+     grantType: string, authType: "Basic" | "Bearer", failOnStatusCode = true) => {
 
-        return cy.request( {
-        "method":"POST",
-        "url":host+Scim2Constants.SCIM2_ENDPOINT+Scim2Constants.SCIM2_USER_ENDPOINT,
-        "failOnStatusCode":failOnStatusCode,
-        "auth":{
-            "username": authrzUserName,
-            "password": authrzPassword
-        },
-        "headers":{
-            "Content-Type":"application/json"
-        },
-        "body": reqBody
-    });
+    cy.getAuthentication(host, username,
+        password, grantType, authType).then(response => {
+
+            const token: string = response.body.access_token;
+
+            return cy.request({
+                "method": RequestMethodTypes.POST,
+                "url": host + UserManagmentConstants.SCIM2_ENDPOINT + UserManagmentConstants.SCIM2_USER_ENDPOINT,
+                "failOnStatusCode": failOnStatusCode,
+                "auth": {
+                    token
+                },
+                "headers": {
+                    "Content-Type": RequestContentTypes.URLENCODED
+                },
+                "body": reqBody
+            });
+        });
 });
