@@ -25,7 +25,7 @@
  * cy.getAuthorization("https://localhost:9443/t/carbon.super","admin","admin","client_credentails","Bearer" )
  */
 Cypress.Commands.add("getAuthentication", (serverHost: string, username: string, password: string,
-    grantType: string, authType: "Basic" | "Bearer"): Cypress.CanReturnChainable => {
+    grantType: string, authType: "Basic" | "Bearer") => {
         
     const encodedCredentials = btoa(username + ":" + password);
 

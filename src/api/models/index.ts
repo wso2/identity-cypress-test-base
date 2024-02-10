@@ -12,3 +12,4 @@
 /// <reference path="../../../types/api/commands.d.ts" />
 
 import "./api-requests/";
+import "./user-management";
