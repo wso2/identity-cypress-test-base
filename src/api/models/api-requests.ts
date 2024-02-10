@@ -9,11 +9,12 @@
  */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-enum RequestType {
+export enum RequestType {
     POST = "POST",
     GET = "get"
  }
 
-enum RequestContentTypes {
+export enum RequestContentTypes {
     URLENCODED = "application/x-www-form-urlencoded",
  }
+
