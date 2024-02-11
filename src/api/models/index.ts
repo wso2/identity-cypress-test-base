@@ -8,7 +8,7 @@
  *   You may not alter or remove any copyright or other notice from copies of this content.
  */
 
-// <reference types="cypress" />
+///<reference types="cypress" />
 /// <reference path="../../../types/api/commands.d.ts" />
 
 import "./api-requests/";
