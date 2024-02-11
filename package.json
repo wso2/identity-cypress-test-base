@@ -24,8 +24,7 @@
         "rimraf": "run-script-os",
         "rimraf:win32": ".\\node_modules\\.bin\\rimraf",
         "rimraf:default": "./node_modules/.bin/rimraf",
-        "prebuild": "npm run clean",
-        "typecheck": "type-check"
+        "prebuild": "npm run clean"
     },
     "devDependencies": {
         "@types/node": "^13.9.2",
