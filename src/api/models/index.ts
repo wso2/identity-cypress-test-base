@@ -11,5 +11,5 @@
 ///<reference types="cypress" />
 /// <reference path="../../../types/api/commands.d.ts" />
 
-import "./api-requests/";
+import "./api-requests";
 import "./user-management";
