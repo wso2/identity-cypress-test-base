@@ -18,7 +18,7 @@
     "scripts": {
         "build": "npm run compile",
         "clean": "npm run rimraf ./dist",
-        "compile": "run-script-os",
+        "compile": "tsc -p tsconfig.json",
         "compile:win32": ".\\node_modules\\.bin\\tsc -p tsconfig.json",
         "compile:default": "./node_modules/.bin/tsc -p tsconfig.json",
         "rimraf": "run-script-os",
