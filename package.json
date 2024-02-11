@@ -18,13 +18,14 @@
     "scripts": {
         "build": "npm run compile",
         "clean": "npm run rimraf ./dist",
-        "compile": "run-script-os",
+        "compile": "tsc -p tsconfig.json",
         "compile:win32": ".\\node_modules\\.bin\\tsc -p tsconfig.json",
         "compile:default": "./node_modules/.bin/tsc -p tsconfig.json",
         "rimraf": "run-script-os",
         "rimraf:win32": ".\\node_modules\\.bin\\rimraf",
         "rimraf:default": "./node_modules/.bin/rimraf",
-        "prebuild": "npm run clean"
+        "prebuild": "npm run clean",
+        "typecheck": "type-check"
     },
     "devDependencies": {
         "@types/node": "^13.9.2",
