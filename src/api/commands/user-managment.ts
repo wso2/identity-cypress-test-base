@@ -30,12 +30,8 @@ import { RequestContentTypes, RequestType }  from "../models/api-requests";
  * @param  {jsonbody} reqBody - request body with user profile informations
  * @param  {boolean} failOnStatusCode- Whether to fail on response codes other than 2xx and 3xx
  * */
-Cypress.Commands.add("createUserViaAPI", (host: string, username: string, password: string, reqBody: Cypress.ObjectLike,
-    grantType: string, authType: "Basic" | "Bearer", failOnStatusCode = true) => {
-
-    cy.getAuthentication(host, username, password, grantType, authType).then(response => {
-
-        const authHeaderValue: string = response;
+Cypress.Commands.add("createUserViaAPI", (host: string ,authzHeader: string, reqBody: Cypress.ObjectLike,
+     failOnStatusCode = true ) => {
 
         return cy.request({
             "method": RequestType.POST,
@@ -44,9 +40,9 @@ Cypress.Commands.add("createUserViaAPI", (host: string, username: string, passwo
             "headers": {
                 "Content-Type": RequestContentTypes.SCIMJSON,
                 "accept": RequestContentTypes.SCIMJSON,
-                "Authorization": authHeaderValue
+                "Authorization": authzHeader
             },
             "body": reqBody
         });
-    });
+   
 });
