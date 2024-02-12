@@ -7,6 +7,7 @@
  *   herein in any form is strictly forbidden, unless permitted by WSO2 expressly.
  *   You may not alter or remove any copyright or other notice from copies of this content.
  */
+import { RequestContentTypes }  from "../models/api-requests";
 
 /**
  * This command use to get the Authentication method with the prefered token and grant type
@@ -39,12 +40,12 @@ Cypress.Commands.add("getAuthentication", (serverHost: string, username: string,
         return cy.request({
             body: {
                 "grant_type": grantType,
-                "scope": "SYSTEM",
+                "scope": "SYSTEM"
             },
             headers:
             {
                 "Authorization": `Basic ${encodedCredentials}`,
-                "Content-Type": "application/x-www-form-urlencoded"
+                "Content-Type": RequestContentTypes.URLENCODED
             },
             method: "POST",
             url: `${serverHost}/oauth2/token`
