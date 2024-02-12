@@ -32,7 +32,7 @@ Cypress.Commands.add("getAuthentication", (serverHost: string, username: string,
 
    // Retrive token from Basic auth type
     if (authType === "Basic") {
-        return cy.wrap(encodedCredentials);
+        return cy.wrap(`Basic ${encodedCredentials}`);
     }
 
     // Retrieve a bearer token from Bearer auth type `oauth2/token` endpoint.
@@ -44,7 +44,7 @@ Cypress.Commands.add("getAuthentication", (serverHost: string, username: string,
             },
             headers:
             {
-                "Authorization": `Basic ${encodedCredentials}`,
+                "Authorization": `Bearer ${encodedCredentials}`,
                 "Content-Type": RequestContentTypes.URLENCODED
             },
             method: "POST",
