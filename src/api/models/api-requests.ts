@@ -16,6 +16,6 @@ export enum RequestType {
 
 export enum RequestContentTypes {
     URLENCODED = "application/x-www-form-urlencoded",
-    JSON = "application/scim+json"
+    SCIMJSON = "application/scim+json"
  }
 

@@ -35,16 +35,16 @@ Cypress.Commands.add("createUserViaAPI", (host: string, username: string, passwo
 
     cy.getAuthentication(host, username, password, grantType, authType).then(response => {
 
-        const token: string = response.body.access_token;
+        const authHeaderValue: string = response;
 
         return cy.request({
             "method": RequestType.POST,
             "url": host + UserManagmentConstants.SCIM2_ENDPOINT + UserManagmentConstants.SCIM2_USER_ENDPOINT,
             "failOnStatusCode": failOnStatusCode,
             "headers": {
-                "Content-Type": RequestContentTypes.JSON,
-                "accept": RequestContentTypes.JSON,
-                "Authorization": token
+                "Content-Type": RequestContentTypes.SCIMJSON,
+                "accept": RequestContentTypes.SCIMJSON,
+                "Authorization": authHeaderValue
             },
             "body": reqBody
         });
