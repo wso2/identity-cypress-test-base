@@ -18,8 +18,8 @@
 
 /// <reference types="cypress" />
 
-import { RequestContentTypes, RequestMethodTypes }  from "../constants/api-constants";
 import { UserManagmentConstants } from "../constants/user-management-constants";
+import { RequestContentTypes, RequestType }  from "../models/api-requests";
 
 /**
  * This command use to create users from scim2.0 POST method
@@ -31,24 +31,22 @@ import { UserManagmentConstants } from "../constants/user-management-constants";
  * @param  {boolean} failOnStatusCode- Whether to fail on response codes other than 2xx and 3xx
  * */
 Cypress.Commands.add("createUserViaAPI", (host: string, username: string, password: string, reqBody: Cypress.ObjectLike,
-     grantType: string, authType: "Basic" | "Bearer", failOnStatusCode = true) => {
+    grantType: string, authType: "Basic" | "Bearer", failOnStatusCode = true) => {
 
-    cy.getAuthentication(host, username,
-        password, grantType, authType).then(response => {
+    cy.getAuthentication(host, username, password, grantType, authType).then(response => {
 
-            const token: string = response.body.access_token;
+        const token: string = response.body.access_token;
 
-            return cy.request({
-                "method": RequestMethodTypes.POST,
-                "url": host + UserManagmentConstants.SCIM2_ENDPOINT + UserManagmentConstants.SCIM2_USER_ENDPOINT,
-                "failOnStatusCode": failOnStatusCode,
-                "auth": {
-                    token
-                },
-                "headers": {
-                    "Content-Type": RequestContentTypes.URLENCODED
-                },
-                "body": reqBody
-            });
+        return cy.request({
+            "method": RequestType.POST,
+            "url": host + UserManagmentConstants.SCIM2_ENDPOINT + UserManagmentConstants.SCIM2_USER_ENDPOINT,
+            "failOnStatusCode": failOnStatusCode,
+            "headers": {
+                "Content-Type": RequestContentTypes.JSON,
+                "accept": RequestContentTypes.JSON,
+                "Authorization": token
+            },
+            "body": reqBody
         });
+    });
 });

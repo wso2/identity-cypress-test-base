@@ -11,10 +11,11 @@
 
 export enum RequestType {
     POST = "POST",
-    GET = "get"
+    GET = "GET"
  }
 
 export enum RequestContentTypes {
     URLENCODED = "application/x-www-form-urlencoded",
+    JSON = "application/scim+json"
  }
 
