@@ -45,7 +45,7 @@ Cypress.Commands.add("getAuthentication", (serverHost: string, username: string,
             headers:
             {
                 "Authorization": `Basic ${encodedCredentials}`,
-                "Content-Type": RequestContentTypes.JSON
+                "Content-Type": RequestContentTypes.URLENCODED
             },
             method: "POST",
             url: `${serverHost}/oauth2/token`
