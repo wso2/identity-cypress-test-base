@@ -25,32 +25,38 @@ import { RequestContentTypes }  from "../models/api-requests";
  * if using Bearer Authentication
  * cy.getAuthorization("https://localhost:9443/t/carbon.super","admin","admin","client_credentails","Bearer" )
  */
-Cypress.Commands.add("getAuthentication", (serverHost: string, username: string, password: string,
-    grantType: string, authType: "Basic" | "Bearer") => {
-        
+Cypress.Commands.add("getBasicAuthentication", (username: string, password: string) => {
+
     const encodedCredentials = btoa(username + ":" + password);
 
-   // Retrive token from Basic auth type
-    if (authType === "Basic") {
-        return cy.wrap(`Basic ${encodedCredentials}`);
-    }
+    return cy.wrap(`Basic ${encodedCredentials}`);
 
+});
+
+Cypress.Commands.add("getBearerAuthentication", (token: string) => {
+
+
+    return cy.wrap(`Bearer ${token}`);
+
+});
+
+Cypress.Commands.add("getTokenViaClientCredential", (serverHost: string, clientID: string, clientSecret: string) => {
+
+    const encodedCredentials = btoa(clientID + ":" + clientSecret);
     // Retrieve a bearer token from Bearer auth type `oauth2/token` endpoint.
-    else {
-        return cy.request({
-            body: {
-                "grant_type": grantType,
-                "scope": "SYSTEM"
-            },
-            headers:
-            {
-                "Authorization": `Bearer ${encodedCredentials}`,
-                "Content-Type": RequestContentTypes.URLENCODED
-            },
-            method: "POST",
-            url: `${serverHost}/oauth2/token`
-        });
-    }
 
-    throw new Error("Invalid Authentication type");
+    return cy.request({
+        body: {
+
+            "grant_type": "client_credentials",
+            "scope": "SYSTEM"
+        },
+        headers:
+        {
+            "Authorization": `Basic ${encodedCredentials}`,
+            "Content-Type": RequestContentTypes.URLENCODED
+        },
+        method: "POST",
+        url: `${serverHost}/oauth2/token`
+    });
 });
