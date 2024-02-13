@@ -10,11 +10,11 @@
 import { RequestContentTypes }  from "../models/api-requests";
 
 /**
- * This command use to get the Basic Authorization token
- * @param  {string} username - API authetication username
- * @param  {string} password - API authetication user password
+ * This command use to get the Basic Authorization header
+ * @param  {string} username - Username of the user.
+ * @param  {string} password - Password of the user.
  */
-Cypress.Commands.add("getBasicAuthentication", (username: string, password: string) => {
+Cypress.Commands.add("getBasicAuthorization", (username: string, password: string) => {
 
     const encodedCredentials = btoa(username + ":" + password);
 
@@ -23,17 +23,17 @@ Cypress.Commands.add("getBasicAuthentication", (username: string, password: stri
 });
 
 /**
- * This command use to get the Bearer Authorization token
- * @param  {string} token - Authentication token via a specific grant type ex:Client Credential
+ * This command use to get the Bearer Authorization header,
+ * @param  {string} token - A valid token retreived by any grant type.
  */
-Cypress.Commands.add("getBearerAuthentication", (token: string) => {
+Cypress.Commands.add("getBearerAuthorization", (token: string) => {
 
     return cy.wrap(`Bearer ${token}`);
 
 });
 
 /**
- * This command use to get the Authentication token via a specific grant type
+ * This command use to get the Authentication token via a Client Credential grant type
  * @param  {string} serverHost - Server host endopoint
  * @param  {string} clientID - API authetication application client ID
  * @param  {string} clientSecret - API authetication application client Secret

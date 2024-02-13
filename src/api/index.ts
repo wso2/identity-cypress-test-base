@@ -11,7 +11,5 @@
 /// <reference types="cypress" />
 /// <reference path="../../types/api/commands.d.ts" />
 
-
 import "./commands";
-
 export * from "./models";
