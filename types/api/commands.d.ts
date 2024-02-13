@@ -28,20 +28,25 @@ declare namespace Cypress {
         createUserViaAPI(host: string, authzHeader: string, reqBody: Cypress.ObjectLike, 
              failOnStatusCode?: boolean): Cypress.Chainable<any>;
 
-        /** 
-        * This command use to get the Authentication method with the prefered token and grant type
-        * @example cy.scimCreateUser("https://<hostname>/domain/", "admin", "admin123", reqBody, true)
-        * @param  {string} serverHost - Host name
-        * @param  {string} username - API authetication username/client-ID
-        * @param  {string} password - API authetication credentials password/client-secret
-        * @param  {jsonbody} grantType - Prefeered grant type
-        * @param  {boolean} authType - Prefeered authentication type
-        * */
-        getBasicAuthentication(username: string, password: string): Cypress.Chainable<any>;
+        /**
+        * This command use to get the Basic Authorization header
+        * @param  {string} username - Username of the user.
+        * @param  {string} password - Password of the user.
+        */
+        getBasicAuthorization(username: string, password: string): Cypress.Chainable<any>;
 
-        getBearerAuthentication(token: string): Cypress.Chainable<any>;
+        /**
+        * This command use to get the Bearer Authorization header,
+        * @param  {string} token - A valid token retreived by any grant type.
+        */
+        getBearerAuthorization(token: string): Cypress.Chainable<any>;
 
+        /**
+        * This command use to get the Authentication token via a Client Credential grant type
+        * @param  {string} serverHost - Server host endopoint
+        * @param  {string} clientID - API authetication application client ID
+        * @param  {string} clientSecret - API authetication application client Secret
+        */
         getTokenViaClientCredential(serverHost: string, clientID: string, clientSecret: string): Cypress.Chainable<any>;
-
     }
 }

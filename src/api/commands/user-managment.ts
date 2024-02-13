@@ -18,8 +18,8 @@
 
 /// <reference types="cypress" />
 
-import { UserManagmentConstants } from "../models/user-management";
 import { RequestContentTypes, RequestType }  from "../models/api-requests";
+import { UserManagmentConstants } from "../models/user-management";
 
 /**
  * This command use to create users from scim2.0 POST method
