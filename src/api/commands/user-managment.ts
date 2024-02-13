@@ -18,24 +18,22 @@
 
 /// <reference types="cypress" />
 
-import { UserManagmentConstants } from "../constants/user-management-constants";
+import { UserManagmentConstants } from "../models/user-management";
 import { RequestContentTypes, RequestType }  from "../models/api-requests";
 
 /**
  * This command use to create users from scim2.0 POST method
- * @example cy.scimCreateUser("https://<hostname>/domain/", "admin", "admin123",reqBody, true)
  * @param  {string} host - host
- * @param  {string} authrzUserName - API authetication credentials user name
- * @param  {string} authrzPassword - API authetication credentials passowrd
- * @param  {jsonbody} reqBody - request body with user profile informations
- * @param  {boolean} failOnStatusCode- Whether to fail on response codes other than 2xx and 3xx
+ * @param  {string} authzHeader - Authorization token 
+ * @param  {jsonbody} reqBody - Request body with user profile informations
+ * @param  {boolean} failOnStatusCode - Whether to fail on response codes other than 2xx and 3xx
  * */
 Cypress.Commands.add("createUserViaAPI", (host: string ,authzHeader: string, reqBody: Cypress.ObjectLike,
      failOnStatusCode = true ) => {
 
         return cy.request({
             "method": RequestType.POST,
-            "url": host + UserManagmentConstants.SCIM2_ENDPOINT + UserManagmentConstants.SCIM2_USER_ENDPOINT,
+            "url": host + UserManagmentConstants.SCIM2_END_POINT + UserManagmentConstants.SCIM2_USER_ENDPOINT,
             "failOnStatusCode": failOnStatusCode,
             "headers": {
                 "Content-Type": RequestContentTypes.SCIMJSON,
@@ -44,5 +42,4 @@ Cypress.Commands.add("createUserViaAPI", (host: string ,authzHeader: string, req
             },
             "body": reqBody
         });
-   
 });

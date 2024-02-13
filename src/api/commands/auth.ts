@@ -10,20 +10,9 @@
 import { RequestContentTypes }  from "../models/api-requests";
 
 /**
- * This command use to get the Authentication method with the prefered token and grant type
- * @example cy.scimCreateUser("https://<hostname>/domain/", "admin", "admin123",reqBody, true)
- * @param  {string} serverHost - Host name
- * @param  {string} username - API authetication username/client-ID
- * @param  {string} password - API authetication credentials password/client-secret
- * @param  {jsonbody} grantType - Prefeered grant type
- * @param  {boolean} authType - Prefeered authentication type
- * 
- * Ex:
- * if using the Basic Authentication ,
- * cy.getAuthorization("https://localhost:9443/t/carbon.super","admin","admin","","Basic" )
- * 
- * if using Bearer Authentication
- * cy.getAuthorization("https://localhost:9443/t/carbon.super","admin","admin","client_credentails","Bearer" )
+ * This command use to get the Basic Authorization token
+ * @param  {string} username - API authetication username
+ * @param  {string} password - API authetication user password
  */
 Cypress.Commands.add("getBasicAuthentication", (username: string, password: string) => {
 
@@ -33,17 +22,26 @@ Cypress.Commands.add("getBasicAuthentication", (username: string, password: stri
 
 });
 
+/**
+ * This command use to get the Bearer Authorization token
+ * @param  {string} token - Authentication token via a specific grant type ex:Client Credential
+ */
 Cypress.Commands.add("getBearerAuthentication", (token: string) => {
-
 
     return cy.wrap(`Bearer ${token}`);
 
 });
 
+/**
+ * This command use to get the Authentication token via a specific grant type
+ * @param  {string} serverHost - Server host endopoint
+ * @param  {string} clientID - API authetication application client ID
+ * @param  {string} clientSecret - API authetication application client Secret
+ */
 Cypress.Commands.add("getTokenViaClientCredential", (serverHost: string, clientID: string, clientSecret: string) => {
 
     const encodedCredentials = btoa(clientID + ":" + clientSecret);
-    // Retrieve a bearer token from Bearer auth type `oauth2/token` endpoint.
+    // Retrieve a token from Basic auth type via `oauth2/token` endpoint .
 
     return cy.request({
         body: {
