@@ -33,7 +33,7 @@ export class LoginPageDomConstants {
 
     // TODO: Use data test id's here.
     // Tracker: https://github.com/wso2-enterprise/asgardeo-product/issues/999
-    public static readonly USERNAME_INPUT_DATA_ATTR: string = "usernameUserInput";
+    public static readonly USERNAME_INPUT_DATA_ATTR: string = "login-page-username-input";
     public static readonly PASSWORD_INPUT_DATA_ATTR: string = "login-page-password-input";
     public static readonly CONTINUE_BUTTON_DATA_ATTR: string = "identifier-auth-continue-button";
     public static readonly SUBMIT_BUTTON_DATA_ATTR: string = "login-page-continue-login-button";

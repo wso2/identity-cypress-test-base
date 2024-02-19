@@ -41,8 +41,9 @@ export class LoginPage {
      * Get the data attribute for login page user input field.
      * @return {Cypress.Chainable<JQuery<HTMLElement>>}
      */
-    public getLoginUsernameInputField(): Cypress.Chainable<JQuery<HTMLElement>> {
-        return cy.get(LoginPageDomConstants.USERNAME_INPUT_DATA_ATTR);
+    public getLoginUsernameInputField(): Cypress.Chainable<Element> {
+        
+        return cy.dataTestId(LoginPageDomConstants.USERNAME_INPUT_DATA_ATTR);
     }
 
     /**
