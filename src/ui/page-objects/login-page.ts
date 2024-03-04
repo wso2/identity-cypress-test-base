@@ -51,6 +51,7 @@ export class LoginPage {
      * @return {Cypress.Chainable<JQuery<HTMLElement>>}
      */
     public getLoginPasswordInputField(): Cypress.Chainable<Element> {
+
         return cy.dataTestId(LoginPageDomConstants.PASSWORD_INPUT_DATA_ATTR);
     }
 
@@ -59,6 +60,7 @@ export class LoginPage {
      * @return {Cypress.Chainable<JQuery<HTMLElement>>}
      */
     public getLoginFormSubmitButton(): Cypress.Chainable<Element> {
+        
         return cy.dataTestId(LoginPageDomConstants.SUBMIT_BUTTON_DATA_ATTR);
     }
 
