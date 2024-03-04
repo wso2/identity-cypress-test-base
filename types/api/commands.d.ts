@@ -23,7 +23,7 @@ declare namespace Cypress {
     interface Chainable {
 
         /**
-         * This command create users from scim2.0 POST method
+         * Custom command to create users from scim2.0 POST method
          */
         createUserViaAPI(host: string, authzHeader: string, reqBody: Cypress.ObjectLike, 
              failOnStatusCode?: boolean): Cypress.Chainable<any>;
