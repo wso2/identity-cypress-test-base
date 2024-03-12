@@ -19,8 +19,6 @@
 
 /// <reference types="cypress" />
 
-import { ServerConstants } from "../constants";
-
 /**
  * Class containing cookie related utils.
  */
@@ -36,15 +34,6 @@ export class CookieUtils {
      */
     private constructor() {
         Cypress.Cookies.debug(CookieUtils.debug);
-    }
-
-    /**
-     * Preserves all session related cookies.
-     */
-    public static preserveAllSessionCookies(): void {
-        for (const cookie of ServerConstants.SESSION_COOKIES) {
-            Cypress.Cookies.preserveOnce(cookie);
-        }
     }
 
     /**

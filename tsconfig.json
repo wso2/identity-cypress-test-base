@@ -15,7 +15,6 @@
         "resolveJsonModule": true,
         "rootDir": "src",
         "sourceMap": true,
-        "suppressImplicitAnyIndexErrors": true,
         "target": "es5",
         "types": [
             "cypress",
@@ -26,7 +25,5 @@
     "exclude": [
         "node_modules"
     ],
-    "include": [
-        "src"
-    ]
+    "include": ["**/*.ts"]
 }
