@@ -29,6 +29,8 @@
     "devDependencies": {
         "@types/node": "^13.9.2",
         "@typescript-eslint/eslint-plugin": "^2.19.2",
+        "@wso2/eslint-plugin": "https://gitpkg.now.sh/brionmario/wso2-ui-configs/packages/eslint-plugin?5bf60cabe9e9a2571e8b1dd16d0c3bdc76db2c4f",
+        "@wso2/prettier-config": "https://gitpkg.now.sh/brionmario/wso2-ui-configs/packages/prettier-config?5bf60cabe9e9a2571e8b1dd16d0c3bdc76db2c4f",
         "@typescript-eslint/parser": "^2.19.2",
         "cypress": "^5.2.0",
         "eslint": "^7.4.0",

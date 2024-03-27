@@ -27,7 +27,9 @@ module.exports = {
     extends: [
         "plugin:cypress/recommended",
         "eslint:recommended",
-        "plugin:import/typescript"
+        "plugin:import/typescript",
+        "plugin:@wso2/prettier",
+        "plugin:@wso2/eslint-plugin"
     ],
     overrides: [
         {
