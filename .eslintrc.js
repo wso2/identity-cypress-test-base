@@ -28,12 +28,13 @@ module.exports = {
     "plugin:@wso2/strict",
     "plugin:@wso2/internal",
     "plugin:@wso2/prettier",
+    "plugin:cypress/recommended",
   ],
   overrides: [],
   parserOptions: {
     project: [path.resolve(__dirname, "tsconfig.json")],
   },
-  plugins: ["@wso2"],
+  plugins: ["@wso2", "cypress"],
   rules: {
     "@typescript-eslint/no-useless-constructor": "off",
   },
