@@ -34,7 +34,7 @@ import { CommonUtils } from "../utils";
  * @returns {Cypress.CanReturnChainable}
  */
 Cypress.Commands.add("dataTestId", (value: string, options?: Partial<Cypress.Loggable & Cypress.Timeoutable
-    & Cypress.Withinable & Cypress.Shadow>): Cypress.CanReturnChainable => {
+    & Cypress.Withinable & Cypress.Shadow>): Cypress.Chainable => {
 
     return cy.get(CommonUtils.resolveDataTestId(value), options);
 });
@@ -50,7 +50,7 @@ Cypress.Commands.add("dataTestId", (value: string, options?: Partial<Cypress.Log
  * @returns {Cypress.CanReturnChainable}
  */
 Cypress.Commands.add("dataComponentId", (value: string, options?: Partial<Cypress.Loggable & Cypress.Timeoutable
-    & Cypress.Withinable & Cypress.Shadow>): Cypress.CanReturnChainable => {
+    & Cypress.Withinable & Cypress.Shadow>): Cypress.Chainable => {
 
     return cy.get(CommonUtils.resolveDataTestId(value), options);
 });
