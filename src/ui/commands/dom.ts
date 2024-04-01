@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2020, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ * Copyright (c) 2024, WSO2 LLC. (https://www.wso2.com). All Rights Reserved.
  *
- * WSO2 Inc. licenses this file to you under the Apache License,
+ * WSO2 LLC. licenses this file to you under the Apache License,
  * Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,7 +14,6 @@
  * KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations
  * under the License.
- *
  */
 
 import { CommonUtils } from "../utils";
@@ -33,11 +32,18 @@ import { CommonUtils } from "../utils";
  * @param {string} options - Query options. i.e timeout etc.
  * @returns {Cypress.CanReturnChainable}
  */
-Cypress.Commands.add("dataTestId", (value: string, options?: Partial<Cypress.Loggable & Cypress.Timeoutable
-    & Cypress.Withinable & Cypress.Shadow>): Cypress.Chainable => {
-
-    return cy.get(CommonUtils.resolveDataTestId(value), options);
-});
+Cypress.Commands.add(
+  "dataTestId",
+  (
+    value: string,
+    options?: Partial<
+      Cypress.Loggable &
+        Cypress.Timeoutable &
+        Cypress.Withinable &
+        Cypress.Shadow
+    >,
+  ): Cypress.Chainable => cy.get(CommonUtils.resolveDataTestId(value), options),
+);
 
 /**
  * Custom command to select DOM element by `data-componentid` attribute.
@@ -49,8 +55,15 @@ Cypress.Commands.add("dataTestId", (value: string, options?: Partial<Cypress.Log
  * @param {string} options - Query options. i.e timeout etc.
  * @returns {Cypress.CanReturnChainable}
  */
-Cypress.Commands.add("dataComponentId", (value: string, options?: Partial<Cypress.Loggable & Cypress.Timeoutable
-    & Cypress.Withinable & Cypress.Shadow>): Cypress.Chainable => {
-
-    return cy.get(CommonUtils.resolveDataTestId(value), options);
-});
+Cypress.Commands.add(
+  "dataComponentId",
+  (
+    value: string,
+    options?: Partial<
+      Cypress.Loggable &
+        Cypress.Timeoutable &
+        Cypress.Withinable &
+        Cypress.Shadow
+    >,
+  ): Cypress.Chainable => cy.get(CommonUtils.resolveDataTestId(value), options),
+);

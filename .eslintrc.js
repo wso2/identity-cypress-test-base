@@ -21,6 +21,7 @@ const path = require("path");
 module.exports = {
   env: {
     // other environments
+    "cypress/globals": true,
     jest: true,
   },
   extends: [
@@ -37,5 +38,6 @@ module.exports = {
   plugins: ["@wso2", "cypress"],
   rules: {
     "@typescript-eslint/no-useless-constructor": "off",
+    "class-methods-use-this": "off",
   },
 };

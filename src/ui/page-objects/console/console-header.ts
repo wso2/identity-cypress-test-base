@@ -1,7 +1,7 @@
 /**
- * Copyright (c) 2021, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ * Copyright (c) 2024, WSO2 LLC. (https://www.wso2.com). All Rights Reserved.
  *
- * WSO2 Inc. licenses this file to you under the Apache License,
+ * WSO2 LLC. licenses this file to you under the Apache License,
  * Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,7 +14,6 @@
  * KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations
  * under the License.
- *
  */
 
 /// <reference types="cypress" />
@@ -26,20 +25,19 @@ import { Header } from "../common";
  * Class containing Console Header component objects.
  */
 export class ConsoleHeader extends Header {
+  /**
+   * Click on the developer portal switch.
+   * @param {Partial<ClickOptions>} options - Click options.
+   */
+  public clickOnDevelopPortalSwitch(): void {
+    cy.dataTestId(ConsoleHeaderDomConstants.DEVELOP_SWITCH_DATA_ATTR).click();
+  }
 
-    /**
-     * Click on the developer portal switch.
-     * @param {Partial<ClickOptions>} options - Click options.
-     */
-    public clickOnDevelopPortalSwitch(options?: Partial<Cypress.ClickOptions>): void {
-        cy.dataTestId(ConsoleHeaderDomConstants.DEVELOP_SWITCH_DATA_ATTR).click();
-    }
-
-    /**
-     * Click on the manage portal switch.
-     * @param {Partial<ClickOptions>} options - Click options.
-     */
-    public clickOnManagePortalSwitch(options?: Partial<Cypress.ClickOptions>): void {
-        cy.dataTestId(ConsoleHeaderDomConstants.MANAGE_SWITCH_DATA_ATTR).click();
-    }
+  /**
+   * Click on the manage portal switch.
+   * @param {Partial<ClickOptions>} options - Click options.
+   */
+  public clickOnManagePortalSwitch(): void {
+    cy.dataTestId(ConsoleHeaderDomConstants.MANAGE_SWITCH_DATA_ATTR).click();
+  }
 }
